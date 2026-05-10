@@ -1,10 +1,98 @@
 trigger:
-  - main
+  branches:
+    include:
+      - main
+
+pr:
+  branches:
+    include:
+      - main
 
 pool:
   vmImage: 'ubuntu-latest'
 
-steps:
-  - checkout: self
-  - script: npm ci
-    displayName: 'Install dependencies'
+variables:
+  nodeVersion: '20.x'
+  VERCEL_ORG_ID: $(VERCEL_ORG_ID)
+  VERCEL_PROJECT_ID: $(VERCEL_PROJECT_ID)
+
+stages:
+  - stage: CI
+    displayName: 'Lint, Test, Build'
+    jobs:
+      - job: Build
+        steps:
+          - task: NodeTool@0
+            inputs:
+              versionSpec: '$(nodeVersion)'
+
+          - script: npm ci
+            displayName: 'Install dependencies'
+
+          - script: npm run lint
+            displayName: 'Type check'
+
+          - script: npm run build
+            displayName: 'Build production bundle'
+
+          - task: PublishBuildArtifacts@1
+            inputs:
+              PathtoPublish: 'dist'
+              ArtifactName: 'site'
+
+  - stage: DeployPreview
+    displayName: 'Vercel Preview (PR)'
+    dependsOn: CI
+    condition: and(succeeded(), eq(variables['Build.Reason'], 'PullRequest'))
+    jobs:
+      - job: VercelPreview
+        steps:
+          - task: NodeTool@0
+            inputs:
+              versionSpec: '$(nodeVersion)'
+
+          - script: npm ci
+            displayName: 'Install dependencies'
+
+          - script: npx vercel pull --yes --environment=preview --token=$(VERCEL_TOKEN)
+            displayName: 'Pull Vercel preview env'
+            env:
+              VERCEL_ORG_ID: $(VERCEL_ORG_ID)
+              VERCEL_PROJECT_ID: $(VERCEL_PROJECT_ID)
+
+          - script: npx vercel deploy --token=$(VERCEL_TOKEN)
+            displayName: 'Deploy preview to Vercel'
+            env:
+              VERCEL_ORG_ID: $(VERCEL_ORG_ID)
+              VERCEL_PROJECT_ID: $(VERCEL_PROJECT_ID)
+
+  - stage: DeployProduction
+    displayName: 'Vercel Production (main)'
+    dependsOn: CI
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
+    jobs:
+      - deployment: VercelProd
+        displayName: 'Deploy to production'
+        environment: 'production'
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: NodeTool@0
+                  inputs:
+                    versionSpec: '$(nodeVersion)'
+
+                - script: npm ci
+                  displayName: 'Install dependencies'
+
+                - script: npx vercel pull --yes --environment=production --token=$(VERCEL_TOKEN)
+                  displayName: 'Pull Vercel production env'
+                  env:
+                    VERCEL_ORG_ID: $(VERCEL_ORG_ID)
+                    VERCEL_PROJECT_ID: $(VERCEL_PROJECT_ID)
+
+                - script: npx vercel deploy --prod --token=$(VERCEL_TOKEN)
+                  displayName: 'Deploy production to Vercel'
+                  env:
+                    VERCEL_ORG_ID: $(VERCEL_ORG_ID)
+                    VERCEL_PROJECT_ID: $(VERCEL_PROJECT_ID)
