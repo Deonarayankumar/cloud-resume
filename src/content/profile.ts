@@ -18,8 +18,7 @@ export const summary =
 
 export const stats = [
   { value: '2+', label: 'YEARS OF EXPERIENCE' },
-  { value: '3+', label: 'ADVANCED PROJECTS' },
-  { value: '50+', label: 'REPOS STANDARDISED' },
+  { value: '5+', label: 'PROJECTS COMPLETED' },
 ];
 
 export const education = {
@@ -28,25 +27,6 @@ export const education = {
   period: '2019 – 2023',
   detail: 'CGPA: 8.92 / 10',
 };
-
-export const skillIcons = [
-  'Jenkins',
-  'Azure DevOps',
-  'Terraform',
-  'Docker',
-  'Kubernetes',
-  'Python',
-  'AWS',
-  'Azure',
-  'SonarQube',
-  'JFrog',
-  'Prometheus',
-  'Grafana',
-  'GitHub',
-  'Linux',
-  'Bash',
-  'Octopus Deploy',
-];
 
 export const experience = [
   {
@@ -87,7 +67,7 @@ export const projects = [
     description:
       'End-to-end delivery platform with FastAPI API and background worker services, Jenkins shared library, SonarQube quality gates, and JFrog artifact promotion.',
     stack: ['Python', 'Jenkins', 'JFrog', 'SonarQube', 'Docker'],
-    gradient: 'from-blue-900/40 to-cyan-900/20',
+    gradient: 'from-blue-900/60 to-blue-800/30',
     link: 'https://github.com/Deonarayankumar/devops-e2e-python-pipeline',
   },
   {
@@ -96,7 +76,7 @@ export const projects = [
     description:
       'Reusable Terraform modules for network, app, and monitoring with dev/staging/prod environments, Checkov gates, and Azure DevOps approvals.',
     stack: ['Terraform', 'Azure', 'Checkov', 'Key Vault'],
-    gradient: 'from-violet-900/40 to-purple-900/20',
+    gradient: 'from-indigo-900/60 to-blue-900/30',
     link: 'https://github.com/Deonarayankumar/devops-e2e-terraform-azure',
   },
   {
@@ -105,7 +85,7 @@ export const projects = [
     description:
       'Containerised API deployed to AKS via Helm with environment overlays, HPA, health probes, and automated rollback workflows.',
     stack: ['AKS', 'Helm', 'Docker', 'Azure DevOps'],
-    gradient: 'from-emerald-900/40 to-teal-900/20',
+    gradient: 'from-sky-900/60 to-blue-800/30',
     link: 'https://github.com/Deonarayankumar/devops-e2e-k8s-delivery',
   },
 ];

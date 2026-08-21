@@ -2,7 +2,7 @@ import { projects } from '../content/profile';
 
 export default function Projects() {
   return (
-    <section id="projects" className="border-t border-white/10 px-6 py-20">
+    <section id="projects" className="border-t border-[var(--border)] px-6 py-20">
       <div className="mx-auto max-w-6xl">
         <h2 className="section-title">Projects</h2>
 
@@ -10,37 +10,35 @@ export default function Projects() {
           {projects.map((project) => (
             <article
               key={project.repo}
-              className="w-[min(100%,320px)] shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a]"
+              className="surface-card w-[min(100%,320px)] shrink-0 overflow-hidden rounded-2xl"
             >
-              <div
-                className={`flex h-44 items-end bg-gradient-to-br p-5 ${project.gradient}`}
-              >
+              <div className={`flex h-44 items-end bg-gradient-to-br p-5 ${project.gradient}`}>
                 <div>
-                  <p className="text-xs uppercase tracking-wider text-white/60">{project.repo}</p>
+                  <p className="text-xs uppercase tracking-wider text-blue-200/70">{project.repo}</p>
                   <h3 className="mt-1 text-lg font-semibold text-white">{project.name}</h3>
                 </div>
               </div>
 
               <div className="p-5">
-                <p className="text-sm leading-6 text-neutral-400">{project.description}</p>
+                <p className="text-sm leading-6 text-[var(--text-muted)]">{project.description}</p>
 
                 <div className="mt-4 flex flex-wrap gap-2">
                   {project.stack.map((tech) => (
                     <span
                       key={tech}
-                      className="rounded border border-white/10 px-2 py-0.5 text-xs text-neutral-400"
+                      className="rounded border border-[var(--border)] px-2 py-0.5 text-xs text-[var(--text-muted)]"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <div className="mt-5 flex gap-3">
+                <div className="mt-5">
                   <a
                     href={project.link}
                     target="_blank"
                     rel="noreferrer"
-                    className="pill-btn-primary flex-1 text-center text-xs"
+                    className="pill-btn-primary block w-full text-center text-xs"
                   >
                     View GitHub
                   </a>
