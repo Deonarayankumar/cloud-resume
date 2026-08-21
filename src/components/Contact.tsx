@@ -32,7 +32,7 @@ export default function Contact() {
             className="surface-card rounded-xl p-6 text-center transition hover:border-[var(--accent)]"
           >
             <p className="text-xs uppercase tracking-wider text-[var(--text-muted)]">LinkedIn</p>
-            <p className="mt-2 text-sm text-[var(--text)]">deonarayan-kumar-b73052186</p>
+            <p className="mt-2 text-sm text-[var(--text)]">deonarayan-kumar8</p>
           </a>
         </div>
 

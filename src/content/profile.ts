@@ -2,10 +2,10 @@ export const profile = {
   name: 'Deonarayan Kumar',
   firstName: 'Deonarayan',
   title: 'DevOps Engineer',
-  tagline: 'A DevOps Engineer',
+  tagline: 'A DevSecOps Enthusiast',
   phone: '+91-8340520797',
   email: 'deonarayan0808@gmail.com',
-  linkedin: 'https://linkedin.com/in/deonarayan-kumar-b73052186',
+  linkedin: 'https://www.linkedin.com/in/deonarayan-kumar8',
   github: 'https://github.com/Deonarayankumar',
   location: 'India',
 };
@@ -17,7 +17,7 @@ export const summary =
   'An experienced DevOps Engineer and technologist, I specialize in delivering stable, high-impact solutions across CI/CD automation, infrastructure as code, container orchestration, and observability. With expertise across Jenkins, Azure DevOps, Terraform, Docker, Kubernetes, and Python automation, I bring enthusiasm and dedication to every platform engineering challenge.';
 
 export const stats = [
-  { value: '2+', label: 'YEARS OF EXPERIENCE' },
+  { value: '3+', label: 'YEARS OF EXPERIENCE' },
   { value: '5+', label: 'PROJECTS COMPLETED' },
 ];
 
