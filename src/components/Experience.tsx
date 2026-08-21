@@ -1,38 +1,56 @@
 import { experience } from '../content/profile';
-import { SectionHeading } from './About';
+
+function CheckIcon() {
+  return (
+    <svg className="mt-1 h-4 w-4 shrink-0 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+      <path
+        fillRule="evenodd"
+        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+}
 
 export default function Experience() {
+  const job = experience[0];
+
   return (
-    <section id="experience" className="border-t border-slate-800 px-6 py-20">
-      <div className="mx-auto max-w-6xl">
-        <SectionHeading label="Experience" title="Professional experience" />
+    <section id="experience" className="border-t border-white/10 px-6 py-20">
+      <div className="mx-auto max-w-5xl">
+        <h2 className="section-title">Experience</h2>
 
-        {experience.map((job) => (
-          <article key={job.company} className="mb-12">
-            <div className="flex flex-col justify-between gap-2 md:flex-row md:items-start">
-              <div>
-                <h3 className="text-xl font-semibold text-white">{job.role}</h3>
-                <p className="mt-1 text-cyan-400">{job.company}</p>
+        <div className="relative mt-16">
+          <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-white/20 md:block" />
+          <div className="absolute left-1/2 top-8 z-10 hidden h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full border border-white/30 bg-[#050505] md:flex">
+            <span className="text-sm">💼</span>
+          </div>
+
+          <article className="relative md:mt-4 md:w-[calc(50%-2rem)] md:pr-8">
+            <div className="rounded-xl border border-white/10 bg-[#0a0a0a] p-6 md:p-8">
+              <div className="mb-4 flex h-12 w-32 items-center justify-center rounded border border-white/10 bg-white px-3">
+                <span className="text-xs font-bold tracking-wider text-black">HEXAWARE</span>
               </div>
-              <p className="text-sm text-slate-500">{job.period}</p>
-            </div>
 
-            <div className="mt-8 space-y-10">
+              <h3 className="text-lg font-semibold text-white">{job.role}</h3>
+              <p className="mt-1 text-sm text-neutral-400">{job.company}</p>
+
+              <div className="mt-4 space-y-2 text-sm text-neutral-500">
+                <p>🕐 {job.period}</p>
+                <p>📍 {job.location}</p>
+              </div>
+
               {job.engagements.map((engagement) => (
-                <div
-                  key={engagement.client}
-                  className="relative border-l border-slate-700 pl-6"
-                >
-                  <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full bg-cyan-400" />
-                  <div className="flex flex-col justify-between gap-1 md:flex-row">
-                    <h4 className="font-medium text-white">{engagement.client}</h4>
-                    <p className="text-sm text-slate-500">{engagement.period}</p>
-                  </div>
-                  <ul className="mt-4 space-y-3">
+                <div key={engagement.client} className="mt-8 border-t border-white/10 pt-6">
+                  <h4 className="font-medium text-white">{engagement.client}</h4>
+                  <p className="mt-1 text-xs text-neutral-500">{engagement.period}</p>
+
+                  <p className="mt-4 text-sm font-medium text-white">Key Achievements:</p>
+                  <ul className="mt-3 space-y-3">
                     {engagement.highlights.map((item) => (
-                      <li key={item} className="flex gap-3 text-sm leading-6 text-slate-400">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400" />
-                        {item}
+                      <li key={item} className="flex gap-3 text-sm leading-6 text-neutral-400">
+                        <CheckIcon />
+                        <span>{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -40,7 +58,7 @@ export default function Experience() {
               ))}
             </div>
           </article>
-        ))}
+        </div>
       </div>
     </section>
   );

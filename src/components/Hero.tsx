@@ -1,57 +1,35 @@
-import { profile, summary } from '../content/profile';
+import { heroIntro, profile } from '../content/profile';
 
 export default function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden px-6 pb-20 pt-32">
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute left-1/4 top-20 h-72 w-72 rounded-full bg-cyan-500/10 blur-3xl" />
-        <div className="absolute right-1/4 top-32 h-72 w-72 rounded-full bg-blue-600/10 blur-3xl" />
-      </div>
-
-      <div className="mx-auto max-w-6xl">
-        <p className="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400">
-          {profile.tagline}
-        </p>
-        <h1 className="mt-4 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-          {profile.name}
-        </h1>
-        <p className="mt-2 text-xl text-slate-400">{profile.title}</p>
-
-        <div className="mt-6 flex flex-wrap gap-4 text-sm text-slate-400">
-          <a href={`tel:${profile.phone}`} className="hover:text-cyan-400">
-            {profile.phone}
-          </a>
-          <span className="text-slate-600">|</span>
-          <a href={`mailto:${profile.email}`} className="hover:text-cyan-400">
-            {profile.email}
-          </a>
-          <span className="text-slate-600">|</span>
-          <a href={profile.linkedin} target="_blank" rel="noreferrer" className="hover:text-cyan-400">
-            LinkedIn
-          </a>
-          <span className="text-slate-600">|</span>
-          <a href={profile.github} target="_blank" rel="noreferrer" className="hover:text-cyan-400">
-            GitHub
-          </a>
+    <section id="home" className="px-6 pb-20 pt-32">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-12 md:flex-row md:items-center md:gap-16">
+        <div className="shrink-0">
+          <div className="flex h-56 w-56 items-center justify-center rounded-full border border-white/20 bg-gradient-to-br from-neutral-800 to-neutral-900 text-5xl font-bold text-white shadow-[0_0_60px_rgba(255,255,255,0.05)] md:h-72 md:w-72 md:text-6xl">
+            DK
+          </div>
         </div>
 
-        <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-400">{summary}</p>
+        <div className="max-w-2xl text-center md:text-left">
+          <h1 className="text-4xl font-semibold leading-tight text-white md:text-5xl">
+            I&apos;m {profile.firstName} Kumar
+          </h1>
+          <p className="mt-3 text-2xl text-neutral-400 md:text-3xl">{profile.tagline}</p>
+          <p className="mt-6 text-sm leading-7 text-neutral-400 md:text-base">{heroIntro}</p>
 
-        <div className="mt-10 flex flex-wrap gap-4">
-          <a
-            href="#projects"
-            className="rounded-lg bg-cyan-500 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400"
-          >
-            View Projects
-          </a>
-          <a
-            href={profile.github}
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-lg border border-slate-700 px-6 py-3 text-sm font-semibold text-white transition hover:border-slate-500"
-          >
-            GitHub Portfolio
-          </a>
+          <div className="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
+            <a href="#contact" className="pill-btn">
+              Connect with Me
+            </a>
+            <a
+              href={profile.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="pill-btn"
+            >
+              LinkedIn
+            </a>
+          </div>
         </div>
       </div>
     </section>

@@ -7,6 +7,22 @@ html {
 body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, sans-serif;
-  background: #020617;
-  color: #e2e8f0;
+  background: #050505;
+  color: #ffffff;
+}
+
+.section-title {
+  @apply text-center text-3xl font-semibold text-white md:text-4xl;
+}
+
+.section-subtitle {
+  @apply mx-auto mt-6 max-w-3xl text-center text-sm leading-7 text-neutral-400 md:text-base;
+}
+
+.pill-btn {
+  @apply inline-flex items-center justify-center rounded-full border border-white px-6 py-2.5 text-sm font-medium text-white transition hover:bg-white hover:text-black;
+}
+
+.pill-btn-primary {
+  @apply inline-flex items-center justify-center rounded-full bg-white px-6 py-2.5 text-sm font-medium text-black transition hover:bg-neutral-200;
 }
