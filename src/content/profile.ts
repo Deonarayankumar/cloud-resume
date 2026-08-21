@@ -6,7 +6,7 @@ export const profile = {
     'Cloud DevOps engineer focused on CI/CD automation, Kubernetes delivery, and infrastructure as code across Azure and AWS.',
   email: 'deonarayan0808@gmail.com',
   linkedin: 'https://linkedin.com/in/deonarayan',
-  github: 'https://github.com/deonarayan0808',
+  github: 'https://github.com/Deonarayankumar',
 };
 
 export const skills = [
@@ -52,24 +52,24 @@ export const projects = [
     name: 'devops-cicd-tools-lab',
     description: 'Jenkins + Azure DevOps + JFrog + SonarQube integration with Flask sample app.',
     stack: ['Jenkins', 'Azure DevOps', 'JFrog', 'SonarQube', 'Python'],
-    link: 'https://github.com/deonarayan/devops-cicd-tools-lab',
+    link: 'https://github.com/Deonarayankumar/devops-cicd-tools-lab',
   },
   {
     name: 'devops-kubernetes-lab',
     description: 'Kustomize-based K8s delivery with dev/staging overlays and smoke tests.',
     stack: ['Kubernetes', 'Kustomize', 'Nginx Ingress'],
-    link: 'https://github.com/deonarayan/devops-kubernetes-lab',
+    link: 'https://github.com/Deonarayankumar/devops-kubernetes-lab',
   },
   {
     name: 'devops-azure-lab',
     description: 'Terraform modules for Azure networking and App Service deployment.',
     stack: ['Azure', 'Terraform'],
-    link: 'https://github.com/deonarayan/devops-azure-lab',
+    link: 'https://github.com/Deonarayankumar/devops-azure-lab',
   },
   {
     name: 'devops-e2e-k8s-delivery',
     description: 'Helm-based AKS delivery pipeline with automated rollback.',
     stack: ['AKS', 'Helm', 'Azure DevOps'],
-    link: 'https://github.com/deonarayan/devops-e2e-k8s-delivery',
+    link: 'https://github.com/Deonarayankumar/devops-e2e-k8s-delivery',
   },
 ];
