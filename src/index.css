@@ -1,9 +1,12 @@
-:root {
-  font-family: Inter, system-ui, sans-serif;
-  color: #e2e8f0;
-  background: #0f172a;
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  background: #020617;
+  color: #e2e8f0;
 }
