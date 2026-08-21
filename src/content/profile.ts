@@ -4,9 +4,9 @@ export const profile = {
   location: 'Remote',
   summary:
     'Cloud DevOps engineer focused on CI/CD automation, Kubernetes delivery, and infrastructure as code across Azure and AWS.',
-  email: 'deonarayan@example.com',
+  email: 'deonarayan0808@gmail.com',
   linkedin: 'https://linkedin.com/in/deonarayan',
-  github: 'https://github.com/deonarayan',
+  github: 'https://github.com/deonarayan0808',
 };
 
 export const skills = [
