@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+:root {
+  --bg: #0b1120;
+  --surface: #131c2e;
+  --surface-elevated: #1a2740;
+  --border: #2d3a52;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --accent-muted: #60a5fa;
+  --text: #f1f5f9;
+  --text-muted: #94a3b8;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -7,22 +19,46 @@ html {
 body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, sans-serif;
-  background: #050505;
-  color: #ffffff;
+  background: var(--bg);
+  color: var(--text);
 }
 
 .section-title {
-  @apply text-center text-3xl font-semibold text-white md:text-4xl;
+  @apply text-center text-3xl font-semibold md:text-4xl;
+  color: var(--text);
 }
 
 .section-subtitle {
-  @apply mx-auto mt-6 max-w-3xl text-center text-sm leading-7 text-neutral-400 md:text-base;
+  @apply mx-auto mt-6 max-w-3xl text-center text-sm leading-7 md:text-base;
+  color: var(--text-muted);
 }
 
 .pill-btn {
-  @apply inline-flex items-center justify-center rounded-full border border-white px-6 py-2.5 text-sm font-medium text-white transition hover:bg-white hover:text-black;
+  @apply inline-flex items-center justify-center rounded-full border px-6 py-2.5 text-sm font-medium transition;
+  border-color: var(--accent);
+  color: var(--accent-muted);
+}
+
+.pill-btn:hover {
+  background: var(--accent);
+  color: white;
 }
 
 .pill-btn-primary {
-  @apply inline-flex items-center justify-center rounded-full bg-white px-6 py-2.5 text-sm font-medium text-black transition hover:bg-neutral-200;
+  @apply inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-medium transition;
+  background: var(--accent);
+  color: white;
+}
+
+.pill-btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+.surface-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.accent-bar {
+  background: var(--accent);
 }
