@@ -1,16 +1,26 @@
 export const profile = {
   name: 'Deonarayan Kumar',
+  firstName: 'Deonarayan',
   title: 'DevOps Engineer',
-  tagline: 'CI/CD · Automation · Kubernetes',
+  tagline: 'A DevOps Engineer',
   phone: '+91-8340520797',
   email: 'deonarayan0808@gmail.com',
-  linkedin: 'https://linkedin.com/in/deonarayan-kumar',
+  linkedin: 'https://linkedin.com/in/deonarayan-kumar-b73052186',
   github: 'https://github.com/Deonarayankumar',
   location: 'India',
 };
 
+export const heroIntro =
+  'I am a DevOps Engineer with hands-on enterprise experience in CI/CD, release engineering, and cloud operations across AWS and Azure, currently working with Hexaware Technologies Limited.';
+
 export const summary =
-  'DevOps Engineer with hands-on enterprise experience in CI/CD, release engineering, Infrastructure as Code (IaC), cloud operations, container orchestration, automation, observability and Linux administration across AWS and Azure. Experienced with Jenkins, Azure DevOps, AWS CodeBuild, Octopus Deploy, Terraform, Docker, Kubernetes, Python, SonarQube, JFrog Artifactory, Prometheus, Grafana and CloudWatch. Supported 10+ application teams, standardised delivery for 50+ repositories, maintained approximately 95% SLA and contributed to release-platform consolidation and recurring licence savings.';
+  'An experienced DevOps Engineer and technologist, I specialize in delivering stable, high-impact solutions across CI/CD automation, infrastructure as code, container orchestration, and observability. With expertise across Jenkins, Azure DevOps, Terraform, Docker, Kubernetes, and Python automation, I bring enthusiasm and dedication to every platform engineering challenge.';
+
+export const stats = [
+  { value: '2+', label: 'YEARS OF EXPERIENCE' },
+  { value: '3+', label: 'ADVANCED PROJECTS' },
+  { value: '50+', label: 'REPOS STANDARDISED' },
+];
 
 export const education = {
   degree: 'Bachelor of Technology, Computer Science Engineering',
@@ -19,45 +29,23 @@ export const education = {
   detail: 'CGPA: 8.92 / 10',
 };
 
-export const skillGroups = [
-  {
-    category: 'DevOps / CI/CD',
-    skills: [
-      'Jenkins',
-      'Azure DevOps Pipelines',
-      'AWS CodeBuild',
-      'Octopus Deploy',
-      'Release Engineering',
-    ],
-  },
-  {
-    category: 'Infrastructure as Code',
-    skills: ['Terraform', 'Chef', 'Infrastructure Provisioning'],
-  },
-  {
-    category: 'Containers',
-    skills: ['Docker', 'Kubernetes', 'HPA', 'Liveness/Readiness Probes'],
-  },
-  {
-    category: 'Automation',
-    skills: ['Python', 'Bash Shell Scripting', 'Pipeline Automation'],
-  },
-  {
-    category: 'Artifact / Quality',
-    skills: ['JFrog Artifactory', 'SonarQube', 'Quality Gates'],
-  },
-  {
-    category: 'Observability',
-    skills: ['Prometheus', 'Grafana', 'ELK Stack', 'AWS CloudWatch'],
-  },
-  {
-    category: 'Cloud',
-    skills: ['AWS', 'Microsoft Azure'],
-  },
-  {
-    category: 'Systems / SCM',
-    skills: ['Linux (RHEL/Ubuntu)', 'Windows Server', 'Git', 'GitHub'],
-  },
+export const skillIcons = [
+  'Jenkins',
+  'Azure DevOps',
+  'Terraform',
+  'Docker',
+  'Kubernetes',
+  'Python',
+  'AWS',
+  'Azure',
+  'SonarQube',
+  'JFrog',
+  'Prometheus',
+  'Grafana',
+  'GitHub',
+  'Linux',
+  'Bash',
+  'Octopus Deploy',
 ];
 
 export const experience = [
@@ -65,6 +53,7 @@ export const experience = [
     company: 'Hexaware Technologies Limited',
     role: 'Cloud & DevOps Engineer',
     period: 'Oct 2023 – Present',
+    location: 'India',
     engagements: [
       {
         client: 'AXA – Enterprise CI/CD & DevOps Platform',
@@ -96,39 +85,27 @@ export const projects = [
     name: 'Multi-Service Python CI/CD Pipeline',
     repo: 'devops-e2e-python-pipeline',
     description:
-      'End-to-end delivery platform with FastAPI API and background worker services, Jenkins shared library, SonarQube quality gates, JFrog artifact promotion, and Azure App Service deployment.',
-    stack: ['Python', 'FastAPI', 'Jenkins', 'JFrog', 'SonarQube', 'Docker', 'Azure'],
-    highlights: [
-      'Two-service architecture with shared pipeline library for build, scan, and promote stages.',
-      'JFrog dev-to-prod artifact promotion with Trivy image scanning.',
-      'Post-deploy smoke tests and documented rollback procedures.',
-    ],
+      'End-to-end delivery platform with FastAPI API and background worker services, Jenkins shared library, SonarQube quality gates, and JFrog artifact promotion.',
+    stack: ['Python', 'Jenkins', 'JFrog', 'SonarQube', 'Docker'],
+    gradient: 'from-blue-900/40 to-cyan-900/20',
     link: 'https://github.com/Deonarayankumar/devops-e2e-python-pipeline',
   },
   {
     name: 'Modular Terraform Azure Platform',
     repo: 'devops-e2e-terraform-azure',
     description:
-      'Reusable Terraform modules for network, app, and monitoring layers with dev/staging/prod environments, Checkov security gates, and Azure DevOps approval workflows.',
-    stack: ['Terraform', 'Azure', 'Checkov', 'Azure DevOps', 'Key Vault'],
-    highlights: [
-      'Multi-environment IaC with plan artifacts on PR and gated applies on main.',
-      'Consistent tagging schema and Key Vault secret references.',
-      'Drift detection script for operational visibility.',
-    ],
+      'Reusable Terraform modules for network, app, and monitoring with dev/staging/prod environments, Checkov gates, and Azure DevOps approvals.',
+    stack: ['Terraform', 'Azure', 'Checkov', 'Key Vault'],
+    gradient: 'from-violet-900/40 to-purple-900/20',
     link: 'https://github.com/Deonarayankumar/devops-e2e-terraform-azure',
   },
   {
     name: 'Helm-Based AKS Delivery',
     repo: 'devops-e2e-k8s-delivery',
     description:
-      'Containerised API deployed to AKS via Helm with dev/staging/prod value overlays, HPA, health probes, staging/prod approval gates, and automated rollback.',
-    stack: ['AKS', 'Helm', 'Docker', 'Azure DevOps', 'ACR'],
-    highlights: [
-      'Helm chart with environment-specific overlays and ingress configuration.',
-      'Azure DevOps pipeline: build → push ACR → Helm upgrade with smoke tests.',
-      'Documented rollback runbook for failed deployments.',
-    ],
+      'Containerised API deployed to AKS via Helm with environment overlays, HPA, health probes, and automated rollback workflows.',
+    stack: ['AKS', 'Helm', 'Docker', 'Azure DevOps'],
+    gradient: 'from-emerald-900/40 to-teal-900/20',
     link: 'https://github.com/Deonarayankumar/devops-e2e-k8s-delivery',
   },
 ];
@@ -145,10 +122,9 @@ export const certifications = [
 ];
 
 export const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
+  { label: 'Home', href: '#home' },
+  { label: 'About Me', href: '#about' },
   { label: 'Experience', href: '#experience' },
+  { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Education', href: '#education' },
-  { label: 'Contact', href: '#contact' },
 ];
