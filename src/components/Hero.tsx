@@ -9,10 +9,10 @@ const heroBackground = (
 
 export default function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden px-6 pb-20 pt-32">
+    <section id="home" className="relative px-6 pb-20 pt-32">
       {heroBackground}
 
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-16">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-12 md:flex-row md:items-center md:gap-16">
         <div className="shrink-0">
           <img
             src="/profile.jpg"
@@ -25,14 +25,14 @@ export default function Hero() {
           />
         </div>
 
-        <div className="min-w-0 max-w-2xl text-center lg:text-left">
-          <h1 className="text-3xl font-semibold leading-tight text-[var(--text)] sm:text-4xl lg:text-5xl">
+        <div className="max-w-2xl text-center md:text-left">
+          <h1 className="text-4xl font-semibold leading-tight text-[var(--text)] md:text-5xl">
             I&apos;m {profile.firstName} Kumar
           </h1>
-          <p className="mt-3 text-xl text-[var(--accent-muted)] sm:text-2xl lg:text-3xl">{profile.tagline}</p>
+          <p className="mt-3 text-2xl text-[var(--accent-muted)] md:text-3xl">{profile.tagline}</p>
           <p className="mt-6 text-sm leading-7 text-[var(--text-muted)] md:text-base">{heroIntro}</p>
 
-          <div className="mt-8 flex flex-wrap justify-center gap-4 lg:justify-start">
+          <div className="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
             <a href="#contact" className="pill-btn-primary">
               Connect with Me
             </a>

@@ -6,11 +6,11 @@ export default function Projects() {
       <div className="mx-auto max-w-6xl">
         <h2 className="section-title">Projects</h2>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-12 flex gap-6 overflow-x-auto pb-4">
           {projects.map((project) => (
             <article
               key={project.repo}
-              className="surface-card overflow-hidden rounded-2xl"
+              className="surface-card w-[min(100%,320px)] shrink-0 overflow-hidden rounded-2xl"
             >
               <div className={`flex h-44 items-end bg-gradient-to-br p-5 ${project.gradient}`}>
                 <div>
