@@ -24,15 +24,15 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <Suspense fallback={<SectionFallback minHeight="28rem" />}>
-          <Projects />
-        </Suspense>
         <About />
+        <Suspense fallback={<SectionFallback minHeight="28rem" />}>
+          <Skills />
+        </Suspense>
         <Suspense fallback={<SectionFallback minHeight="36rem" />}>
           <Experience />
         </Suspense>
-        <Suspense fallback={<SectionFallback minHeight="28rem" />}>
-          <Skills />
+        <Suspense fallback={<SectionFallback minHeight="24rem" />}>
+          <Projects />
         </Suspense>
         <Suspense fallback={<SectionFallback minHeight="22rem" />}>
           <UpskillHorizon />
