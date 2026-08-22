@@ -1,19 +1,44 @@
 import { heroIntro, profile } from '../content/profile';
+import ClientStrip from './ClientStrip';
 
 const heroBackground = (
-  <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-    <div className="absolute -left-20 top-20 h-72 w-72 rounded-full bg-blue-600/10 blur-3xl" />
-    <div className="absolute -right-20 top-40 h-72 w-72 rounded-full bg-indigo-600/10 blur-3xl" />
-  </div>
+  <div
+    className="pointer-events-none absolute inset-0 -z-10"
+    style={{ background: 'var(--hero-gradient)' }}
+  />
 );
 
 export default function Hero() {
   return (
-    <section id="home" className="relative px-6 pb-20 pt-32">
+    <section id="home" className="relative px-6 pb-20 pt-32 md:pt-36">
       {heroBackground}
 
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-12 md:flex-row md:items-center md:gap-16">
-        <div className="shrink-0">
+      <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16">
+        <div>
+          <p className="text-sm font-medium uppercase tracking-[0.25em] text-[var(--accent-muted)]">
+            {profile.name}
+          </p>
+          <h1 className="mt-4 max-w-3xl text-4xl font-semibold leading-tight tracking-tight text-[var(--text)] md:text-5xl lg:text-6xl">
+            {profile.headline}
+          </h1>
+          <p className="mt-4 text-base text-[var(--accent-muted)] md:text-lg">{profile.roleLine}</p>
+          <p className="mt-6 max-w-2xl text-sm leading-7 text-[var(--text-muted)] md:text-base">
+            {heroIntro}
+          </p>
+
+          <ClientStrip />
+
+          <div className="mt-10 flex flex-wrap gap-4">
+            <a href="#projects" className="pill-btn-primary">
+              Explore my Work
+            </a>
+            <a href="#contact" className="pill-btn">
+              Get in touch
+            </a>
+          </div>
+        </div>
+
+        <div className="flex justify-center lg:justify-end">
           <img
             src="/profile.jpg"
             alt={`${profile.name} — DevOps Engineer`}
@@ -21,25 +46,8 @@ export default function Hero() {
             height={288}
             decoding="async"
             fetchPriority="high"
-            className="h-56 w-56 rounded-full border-2 border-[var(--border)] object-cover object-top shadow-[0_0_40px_rgba(59,130,246,0.15)] md:h-72 md:w-72"
+            className="h-56 w-56 rounded-[2rem] border border-[var(--border)] object-cover object-top shadow-[var(--card-shadow)] md:h-72 md:w-72"
           />
-        </div>
-
-        <div className="max-w-2xl text-center md:text-left">
-          <h1 className="text-4xl font-semibold leading-tight text-[var(--text)] md:text-5xl">
-            I&apos;m {profile.firstName} Kumar
-          </h1>
-          <p className="mt-3 text-2xl text-[var(--accent-muted)] md:text-3xl">{profile.tagline}</p>
-          <p className="mt-6 text-sm leading-7 text-[var(--text-muted)] md:text-base">{heroIntro}</p>
-
-          <div className="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
-            <a href="#contact" className="pill-btn-primary">
-              Connect with Me
-            </a>
-            <a href={profile.linkedin} target="_blank" rel="noreferrer" className="pill-btn">
-              LinkedIn
-            </a>
-          </div>
         </div>
       </div>
     </section>

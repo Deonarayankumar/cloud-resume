@@ -3,23 +3,40 @@ export const profile = {
   firstName: 'Deonarayan',
   title: 'DevOps Engineer',
   tagline: 'A DevSecOps Enthusiast',
+  headline: 'Building reliable CI/CD platforms at scale',
+  roleLine: 'DevOps Engineer | DevSecOps Enthusiast | Based in India',
   phone: '+91-8340520797',
   email: 'deonarayan0808@gmail.com',
   linkedin: 'https://www.linkedin.com/in/deonarayan-kumar8',
   github: 'https://github.com/Deonarayankumar',
   location: 'India',
+  resumeUrl: '/resume.pdf',
 };
 
+export const clients = ['Hexaware', 'AXA', 'Kirkland & Ellis'];
+
 export const heroIntro =
-  'I am a DevOps Engineer with hands-on enterprise experience in CI/CD, release engineering, and cloud operations across AWS and Azure, currently working with Hexaware Technologies Limited.';
+  'I partner with enterprise teams to design and operate CI/CD platforms, cloud infrastructure, and release workflows that improve delivery speed without sacrificing reliability, security, or governance.';
 
 export const summary =
   'An experienced DevOps Engineer and technologist, I specialize in delivering stable, high-impact solutions across CI/CD automation, infrastructure as code, container orchestration, and observability. With expertise across Jenkins, Azure DevOps, Terraform, Docker, Kubernetes, and Python automation, I bring enthusiasm and dedication to every platform engineering challenge.';
 
+export const aboutNarrative = {
+  enterprise:
+    'On the enterprise side: at Hexaware I support AXA with enterprise CI/CD and release engineering across Jenkins, Azure DevOps, AWS CodeBuild, and Octopus Deploy — enabling 10+ application teams, standardising delivery for 50+ repositories, and maintaining approximately 95% SLA through proactive platform operations.',
+  cloud:
+    'On the cloud migration side: I supported Kirkland & Ellis with Azure infrastructure provisioning through Terraform, repeatable Linux VM builds, networking, storage, and observability with Prometheus and Grafana under senior engineering guidance.',
+};
+
 export const stats = [
-  { value: '3', label: 'YEARS OF EXPERIENCE' },
-  { value: '5+', label: 'PROJECTS COMPLETED' },
+  { value: '3', label: 'Years of experience' },
+  { value: '5+', label: 'Projects completed' },
+  { value: '10+', label: 'Application teams supported' },
 ];
+
+export const projectCategories = ['All', 'CI/CD', 'Cloud / IaC', 'Kubernetes'] as const;
+
+export type ProjectCategory = (typeof projectCategories)[number];
 
 export const upskillGoals = [
   {
@@ -27,12 +44,14 @@ export const upskillGoals = [
     detail:
       'Embed AI-assisted threat detection, automated compliance checks, and intelligent pipeline guardrails into CI/CD workflows — bridging DevOps velocity with security-by-design.',
     tags: ['AI/ML', 'DevSecOps', 'Pipeline Automation', 'Security Gates'],
+    icon: '🛡️',
   },
   {
     title: 'Advanced DevOps Certifications',
     detail:
       'Pursue industry-recognised credentials to validate deep platform expertise and stay aligned with enterprise cloud standards.',
     tags: ['CKA', 'Azure DevOps Engineer Expert', 'AWS DevOps Engineer', 'Terraform Associate'],
+    icon: '🎓',
   },
 ];
 
@@ -49,6 +68,7 @@ export const experience = [
     role: 'Cloud & DevOps Engineer',
     period: 'Oct 2023 – Present',
     location: 'India',
+    logoLabel: 'HEXAWARE',
     engagements: [
       {
         client: 'AXA – Enterprise CI/CD & DevOps Platform',
@@ -84,6 +104,9 @@ export const projects = [
     stack: ['Python', 'Jenkins', 'JFrog', 'SonarQube', 'Docker'],
     gradient: 'from-blue-900/60 to-blue-800/30',
     link: 'https://github.com/Deonarayankumar/devops-e2e-python-pipeline',
+    category: 'CI/CD' as const,
+    badge: 'Shipped',
+    client: 'Portfolio showcase',
   },
   {
     name: 'Modular Terraform Azure Platform',
@@ -93,6 +116,9 @@ export const projects = [
     stack: ['Terraform', 'Azure', 'Checkov', 'Key Vault'],
     gradient: 'from-indigo-900/60 to-blue-900/30',
     link: 'https://github.com/Deonarayankumar/devops-e2e-terraform-azure',
+    category: 'Cloud / IaC' as const,
+    badge: 'Enterprise',
+    client: 'Azure platform engineering',
   },
   {
     name: 'Helm-Based AKS Delivery',
@@ -102,6 +128,9 @@ export const projects = [
     stack: ['AKS', 'Helm', 'Docker', 'Azure DevOps'],
     gradient: 'from-sky-900/60 to-blue-800/30',
     link: 'https://github.com/Deonarayankumar/devops-e2e-k8s-delivery',
+    category: 'Kubernetes' as const,
+    badge: 'Shipped',
+    client: 'Kubernetes delivery platform',
   },
 ];
 
@@ -117,10 +146,9 @@ export const certifications = [
 ];
 
 export const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'About Me', href: '#about' },
+  { label: 'Work', href: '#projects' },
+  { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
   { label: 'Skills', href: '#skills' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Upskill', href: '#upskill' },
+  { label: 'Contact', href: '#contact' },
 ];
