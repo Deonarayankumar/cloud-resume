@@ -21,11 +21,11 @@ export default function Skills() {
           ))}
         </div>
 
-        <div className="mt-20 flex flex-col items-center justify-center gap-10 sm:flex-row sm:gap-0">
+        <div className="mt-20 grid gap-8 sm:grid-cols-3">
           {stats.map((stat, index) => (
             <div
               key={stat.label}
-              className={`flex flex-col items-center px-16 text-center ${
+              className={`flex flex-col items-center text-center sm:items-start sm:text-left sm:pl-6 md:pl-8 ${
                 index > 0 ? 'sm:border-l sm:border-[var(--border)]' : ''
               }`}
             >
