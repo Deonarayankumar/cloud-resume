@@ -17,8 +17,23 @@ export const summary =
   'An experienced DevOps Engineer and technologist, I specialize in delivering stable, high-impact solutions across CI/CD automation, infrastructure as code, container orchestration, and observability. With expertise across Jenkins, Azure DevOps, Terraform, Docker, Kubernetes, and Python automation, I bring enthusiasm and dedication to every platform engineering challenge.';
 
 export const stats = [
-  { value: '3+', label: 'YEARS OF EXPERIENCE' },
+  { value: '3', label: 'YEARS OF EXPERIENCE' },
   { value: '5+', label: 'PROJECTS COMPLETED' },
+];
+
+export const upskillGoals = [
+  {
+    title: 'AI-Integrated DevSecOps Practices',
+    detail:
+      'Embed AI-assisted threat detection, automated compliance checks, and intelligent pipeline guardrails into CI/CD workflows — bridging DevOps velocity with security-by-design.',
+    tags: ['AI/ML', 'DevSecOps', 'Pipeline Automation', 'Security Gates'],
+  },
+  {
+    title: 'Advanced DevOps Certifications',
+    detail:
+      'Pursue industry-recognised credentials to validate deep platform expertise and stay aligned with enterprise cloud standards.',
+    tags: ['CKA', 'Azure DevOps Engineer Expert', 'AWS DevOps Engineer', 'Terraform Associate'],
+  },
 ];
 
 export const education = {
@@ -107,4 +122,5 @@ export const navLinks = [
   { label: 'Experience', href: '#experience' },
   { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Upskill', href: '#upskill' },
 ];

@@ -1,18 +1,26 @@
 import { heroIntro, profile } from '../content/profile';
 
+const heroBackground = (
+  <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+    <div className="absolute -left-20 top-20 h-72 w-72 rounded-full bg-blue-600/10 blur-3xl" />
+    <div className="absolute -right-20 top-40 h-72 w-72 rounded-full bg-indigo-600/10 blur-3xl" />
+  </div>
+);
+
 export default function Hero() {
   return (
     <section id="home" className="relative px-6 pb-20 pt-32">
-      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute -left-20 top-20 h-72 w-72 rounded-full bg-blue-600/10 blur-3xl" />
-        <div className="absolute -right-20 top-40 h-72 w-72 rounded-full bg-indigo-600/10 blur-3xl" />
-      </div>
+      {heroBackground}
 
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-12 md:flex-row md:items-center md:gap-16">
         <div className="shrink-0">
           <img
             src="/profile.jpg"
             alt={`${profile.name} — DevOps Engineer`}
+            width={288}
+            height={288}
+            decoding="async"
+            fetchPriority="high"
             className="h-56 w-56 rounded-full border-2 border-[var(--border)] object-cover object-top shadow-[0_0_40px_rgba(59,130,246,0.15)] md:h-72 md:w-72"
           />
         </div>

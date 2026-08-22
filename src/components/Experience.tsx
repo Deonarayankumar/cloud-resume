@@ -1,26 +1,25 @@
 import { experience } from '../content/profile';
 
-function CheckIcon() {
-  return (
-    <svg
-      className="mt-1 h-4 w-4 shrink-0 text-[var(--accent)]"
-      viewBox="0 0 20 20"
-      fill="currentColor"
-    >
-      <path
-        fillRule="evenodd"
-        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-        clipRule="evenodd"
-      />
-    </svg>
-  );
-}
+const checkIcon = (
+  <svg
+    className="mt-1 h-4 w-4 shrink-0 text-[var(--accent)]"
+    viewBox="0 0 20 20"
+    fill="currentColor"
+    aria-hidden
+  >
+    <path
+      fillRule="evenodd"
+      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
 
 export default function Experience() {
   const job = experience[0];
 
   return (
-    <section id="experience" className="border-t border-[var(--border)] px-6 py-20">
+    <section id="experience" className="section-deferred px-6 py-24">
       <div className="mx-auto max-w-5xl">
         <h2 className="section-title">Experience</h2>
 
@@ -45,7 +44,10 @@ export default function Experience() {
               </div>
 
               {job.engagements.map((engagement) => (
-                <div key={engagement.client} className="mt-8 border-t border-[var(--border)] pt-6">
+                <div
+                  key={engagement.client}
+                  className="content-visibility-auto mt-8 space-y-4 border-l-2 border-[var(--accent)]/30 pl-5"
+                >
                   <h4 className="font-medium text-[var(--text)]">{engagement.client}</h4>
                   <p className="mt-1 text-xs text-[var(--text-muted)]">{engagement.period}</p>
 
@@ -53,7 +55,7 @@ export default function Experience() {
                   <ul className="mt-3 space-y-3">
                     {engagement.highlights.map((item) => (
                       <li key={item} className="flex gap-3 text-sm leading-6 text-[var(--text-muted)]">
-                        <CheckIcon />
+                        {checkIcon}
                         <span>{item}</span>
                       </li>
                     ))}
