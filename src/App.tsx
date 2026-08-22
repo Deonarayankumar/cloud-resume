@@ -21,8 +21,11 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[var(--bg)] text-[var(--text)]">
+      <a href="#main" className="skip-link">
+        Skip to content
+      </a>
       <Navbar />
-      <main>
+      <main id="main">
         <Hero />
         <About />
         <Suspense fallback={<SectionFallback minHeight="28rem" />}>

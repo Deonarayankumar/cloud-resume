@@ -8,6 +8,7 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/deonarayan-kumar8',
   github: 'https://github.com/Deonarayankumar',
   location: 'India',
+  resumeUrl: '/resume.pdf',
 };
 
 export const heroIntro =

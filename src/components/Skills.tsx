@@ -6,14 +6,14 @@ export default function Skills() {
   return (
     <section id="skills" className="section-deferred px-6 py-24">
       <div className="mx-auto max-w-6xl">
-        <SectionHeading label="Skills" title="Professional Skills" />
+        <SectionHeading index="02" label="Skills" title="Professional Skills" />
 
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-3">
           {skills.map(({ name, Icon, color }) => (
             <div
               key={name}
               title={name}
-              className="flex h-20 w-20 flex-col items-center justify-center rounded-lg border border-[var(--border)] bg-[var(--surface)] p-2 transition hover:border-[var(--accent)] hover:bg-[var(--surface-elevated)] sm:h-24 sm:w-24"
+              className="box flex h-20 w-20 flex-col items-center justify-center p-2 transition hover:border-[var(--c-accent)] sm:h-24 sm:w-24"
             >
               <Icon className="text-3xl sm:text-4xl" style={{ color }} aria-hidden />
               <span className="sr-only">{name}</span>
@@ -25,14 +25,14 @@ export default function Skills() {
           {stats.map((stat, index) => (
             <div
               key={stat.label}
-              className={`flex flex-col items-center px-16 text-center ${
-                index > 0 ? 'sm:border-l sm:border-[var(--border)]' : ''
+              className={`box stat-card flex flex-col items-center px-10 py-6 text-center sm:min-w-[12rem] ${
+                index > 0 ? 'sm:ml-4' : ''
               }`}
             >
-              <p className="text-4xl font-bold text-[var(--accent-muted)] md:text-5xl">
+              <p className="font-mono-ui font-semibold text-[var(--c-accent)]" style={{ fontSize: 'var(--font-stat)' }}>
                 {stat.value}
               </p>
-              <p className="mt-2 text-xs tracking-[0.2em] text-[var(--text-muted)]">
+              <p className="font-mono-ui mt-2 text-xs tracking-[0.15em] text-[var(--text-muted)] uppercase">
                 {stat.label}
               </p>
             </div>
