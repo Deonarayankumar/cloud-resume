@@ -2,7 +2,7 @@ import { certifications, education } from '../content/profile';
 
 export default function Education() {
   return (
-    <section id="education" className="border-t border-[var(--border)] px-6 py-20">
+    <section id="education" className="section-deferred px-6 py-24">
       <div className="mx-auto max-w-4xl">
         <h2 className="section-title">Education & Certifications</h2>
 

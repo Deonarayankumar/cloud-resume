@@ -2,7 +2,7 @@ import { profile } from '../content/profile';
 
 export default function Contact() {
   return (
-    <section id="contact" className="border-t border-[var(--border)] px-6 py-20">
+    <section id="contact" className="section-deferred px-6 py-24">
       <div className="mx-auto max-w-4xl">
         <h2 className="section-title">Let&apos;s talk</h2>
         <p className="section-subtitle">

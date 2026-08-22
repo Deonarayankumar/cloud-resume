@@ -2,7 +2,7 @@ import { projects } from '../content/profile';
 
 export default function Projects() {
   return (
-    <section id="projects" className="border-t border-[var(--border)] px-6 py-20">
+    <section id="projects" className="section-deferred px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <h2 className="section-title">Projects</h2>
 
