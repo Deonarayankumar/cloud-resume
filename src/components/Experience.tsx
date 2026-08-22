@@ -24,12 +24,12 @@ export default function Experience() {
         <h2 className="section-title">Experience</h2>
 
         <div className="relative mt-16">
-          <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-[var(--border)] lg:block" />
-          <div className="absolute left-1/2 top-8 z-10 hidden h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--bg)] lg:flex">
+          <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-[var(--border)] md:block" />
+          <div className="absolute left-1/2 top-8 z-10 hidden h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--bg)] md:flex">
             <span className="text-sm">💼</span>
           </div>
 
-          <article className="relative lg:mt-4 lg:w-[calc(50%-2rem)] lg:pr-8">
+          <article className="relative md:mt-4 md:w-[calc(50%-2rem)] md:pr-8">
             <div className="surface-card rounded-xl p-6 md:p-8">
               <div className="mb-4 flex h-12 w-32 items-center justify-center rounded border border-[var(--border)] bg-white px-3">
                 <span className="text-xs font-bold tracking-wider text-[#0b1120]">HEXAWARE</span>
