@@ -1,18 +1,10 @@
-type SectionHeadingProps = {
-  label: string;
-  title: string;
-  align?: 'left' | 'center';
-};
-
-export function SectionHeading({ label, title, align = 'left' }: SectionHeadingProps) {
-  const alignment = align === 'center' ? 'text-center items-center' : 'text-left items-start';
-
+export function SectionHeading({ label, title }: { label: string; title: string }) {
   return (
-    <div className={`mb-10 flex flex-col ${alignment}`}>
+    <div className="mb-10">
       <p className="text-sm font-medium uppercase tracking-[0.25em] text-[var(--accent-muted)]">
         {label}
       </p>
-      <h2 className="section-title mt-2">{title}</h2>
+      <h2 className="mt-2 text-3xl font-bold text-[var(--text)] md:text-4xl">{title}</h2>
     </div>
   );
 }

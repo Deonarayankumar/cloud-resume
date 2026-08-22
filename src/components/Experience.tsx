@@ -1,5 +1,4 @@
 import { experience } from '../content/profile';
-import { SectionHeading } from './SectionHeading';
 
 const checkIcon = (
   <svg
@@ -21,35 +20,39 @@ export default function Experience() {
 
   return (
     <section id="experience" className="section-deferred px-6 py-24">
-      <div className="mx-auto max-w-7xl">
-        <SectionHeading label="Experience" title="Where I've delivered impact" />
+      <div className="mx-auto max-w-5xl">
+        <h2 className="section-title">Experience</h2>
 
-        <div className="space-y-8">
-          <article className="surface-card rounded-[1.5rem] p-6 md:p-8">
-            <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
-              <div>
-                <div className="mb-4 inline-flex rounded-xl border border-[var(--border)] bg-[var(--surface-elevated)] px-4 py-2 text-xs font-bold tracking-wider text-[var(--text)]">
-                  {job.logoLabel}
-                </div>
-                <h3 className="text-2xl font-semibold text-[var(--text)]">{job.role}</h3>
-                <p className="mt-1 text-[var(--accent-muted)]">{job.company}</p>
-              </div>
-              <div className="text-sm text-[var(--text-muted)]">
-                <p>{job.period}</p>
-                <p>{job.location}</p>
-              </div>
-            </div>
+        <div className="relative mt-16">
+          <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-[var(--border)] md:block" />
+          <div className="absolute left-1/2 top-8 z-10 hidden h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--bg)] md:flex">
+            <span className="text-sm">💼</span>
+          </div>
 
-            <div className="mt-8 grid gap-6 lg:grid-cols-2">
+          <article className="relative md:mt-4 md:w-[calc(50%-2rem)] md:pr-8">
+            <div className="surface-card rounded-xl p-6 md:p-8">
+              <div className="mb-4 flex h-12 w-32 items-center justify-center rounded border border-[var(--border)] bg-white px-3">
+                <span className="text-xs font-bold tracking-wider text-[#0b1120]">HEXAWARE</span>
+              </div>
+
+              <h3 className="text-lg font-semibold text-[var(--text)]">{job.role}</h3>
+              <p className="mt-1 text-sm text-[var(--accent-muted)]">{job.company}</p>
+
+              <div className="mt-4 space-y-2 text-sm text-[var(--text-muted)]">
+                <p>🕐 {job.period}</p>
+                <p>📍 {job.location}</p>
+              </div>
+
               {job.engagements.map((engagement) => (
                 <div
                   key={engagement.client}
-                  className="content-visibility-auto rounded-2xl border border-[var(--border)] bg-[var(--surface-elevated)] p-5"
+                  className="content-visibility-auto mt-8 space-y-4 border-l-2 border-[var(--accent)]/30 pl-5"
                 >
-                  <h4 className="text-lg font-medium text-[var(--text)]">{engagement.client}</h4>
+                  <h4 className="font-medium text-[var(--text)]">{engagement.client}</h4>
                   <p className="mt-1 text-xs text-[var(--text-muted)]">{engagement.period}</p>
 
-                  <ul className="mt-4 space-y-3">
+                  <p className="mt-4 text-sm font-medium text-[var(--text)]">Key Achievements:</p>
+                  <ul className="mt-3 space-y-3">
                     {engagement.highlights.map((item) => (
                       <li key={item} className="flex gap-3 text-sm leading-6 text-[var(--text-muted)]">
                         {checkIcon}
