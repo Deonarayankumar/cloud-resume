@@ -11,16 +11,16 @@ export default function Projects() {
           {projects.map((project) => (
             <article
               key={project.repo}
-              className="surface-card portfolio-card w-[min(100%,320px)] shrink-0 overflow-hidden"
+              className="surface-card flex w-[min(100%,320px)] shrink-0 flex-col overflow-hidden"
             >
-              <div className="flex h-44 items-end border-b border-[var(--border)] bg-[var(--c-surface-alt)] p-5">
+              <div className="flex h-44 shrink-0 items-end border-b border-[var(--border)] bg-[var(--c-surface-alt)] p-5">
                 <div>
                   <p className="font-mono-ui text-xs uppercase tracking-wider text-[var(--c-accent)]">{project.repo}</p>
                   <h3 className="mt-2 text-lg font-semibold text-[var(--c-heading)]">{project.name}</h3>
                 </div>
               </div>
 
-              <div className="p-5">
+              <div className="flex flex-1 flex-col p-5">
                 <p className="text-sm leading-6 text-[var(--text-muted)]">{project.description}</p>
 
                 <div className="mt-4 flex flex-wrap gap-2">
@@ -31,12 +31,12 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <div className="mt-5">
+                <div className="mt-auto pt-5">
                   <a
                     href={project.link}
                     target="_blank"
                     rel="noreferrer"
-                    className="pill-btn-primary block w-full text-center text-xs"
+                    className="pill-btn-primary flex w-full justify-center text-xs"
                   >
                     View GitHub
                   </a>
