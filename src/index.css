@@ -1,15 +1,81 @@
 @import "tailwindcss";
 
+[data-theme="dark"] {
+  color-scheme: dark;
+  --c-bg: #0d0e12;
+  --c-surface: #15171d;
+  --c-surface-alt: #1b1e26;
+  --c-border: #262a33;
+  --c-border-ui: #333844;
+  --c-text: #e7e8ea;
+  --c-heading: #ffffff;
+  --c-muted: #8b8f98;
+  --c-accent: #22c55e;
+  --c-accent-light: #4ade80;
+  --c-accent-dark: #16a34a;
+  --c-dot-green: #22c55e;
+  --c-success: #22c55e;
+  --c-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.25);
+  --c-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.35);
+  --c-glow: 0 0 0 1px rgba(34, 197, 94, 0.25);
+
+  --bg: var(--c-bg);
+  --surface: var(--c-surface);
+  --surface-elevated: var(--c-surface-alt);
+  --border: var(--c-border);
+  --accent: var(--c-accent);
+  --accent-hover: var(--c-accent-dark);
+  --accent-muted: var(--c-accent-light);
+  --text: var(--c-text);
+  --text-muted: var(--c-muted);
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --c-bg: #fafafa;
+  --c-surface: #ffffff;
+  --c-surface-alt: #f1f2f4;
+  --c-border: #e4e5e8;
+  --c-border-ui: #d3d5d9;
+  --c-text: #16181c;
+  --c-heading: #0d0e12;
+  --c-muted: #63666d;
+  --c-accent: #16a34a;
+  --c-accent-light: #22c55e;
+  --c-accent-dark: #15803d;
+  --c-dot-green: #16a34a;
+  --c-success: #16a34a;
+  --c-shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --c-shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+  --c-glow: 0 0 0 1px rgba(22, 163, 74, 0.2);
+
+  --bg: var(--c-bg);
+  --surface: var(--c-surface);
+  --surface-elevated: var(--c-surface-alt);
+  --border: var(--c-border);
+  --accent: var(--c-accent);
+  --accent-hover: var(--c-accent-dark);
+  --accent-muted: var(--c-accent-light);
+  --text: var(--c-text);
+  --text-muted: var(--c-muted);
+}
+
 :root {
-  --bg: #0b1120;
-  --surface: #131c2e;
-  --surface-elevated: #1a2740;
-  --border: #2d3a52;
-  --accent: #3b82f6;
-  --accent-hover: #2563eb;
-  --accent-muted: #60a5fa;
-  --text: #f1f5f9;
-  --text-muted: #94a3b8;
+  --font-body: "Poppins", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-xs: 0.6875rem;
+  --font-sm: 0.75rem;
+  --font-btn: 0.8125rem;
+  --font-body-sm: 0.875rem;
+  --font-base: 1rem;
+  --font-lg: 1.125rem;
+  --font-xl: 1.25rem;
+  --font-2xl: 1.375rem;
+  --font-3xl: 1.5rem;
+  --font-4xl: 1.625rem;
+  --font-5xl: 2rem;
+  --font-stat: 1.875rem;
+  --radius-box: 6px;
 }
 
 html {
@@ -18,49 +84,164 @@ html {
 
 body {
   margin: 0;
-  font-family: Inter, system-ui, -apple-system, sans-serif;
+  font-family: var(--font-body);
+  font-size: var(--font-base);
   background: var(--bg);
   color: var(--text);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.font-mono-ui {
+  font-family: var(--font-mono);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: var(--c-accent);
+  color: #0d0e12;
+  font-family: var(--font-mono);
+  font-size: var(--font-sm);
+  text-decoration: none;
+}
+
+.skip-link:focus-visible {
+  left: 1rem;
+  top: 1rem;
+}
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 2px;
 }
 
 .section-title {
   @apply text-center text-3xl font-semibold md:text-4xl;
-  color: var(--text);
+  color: var(--c-heading);
+  font-size: var(--font-3xl);
 }
 
 .section-subtitle {
-  @apply mx-auto mt-6 max-w-3xl text-center text-sm leading-7 md:text-base;
+  @apply mx-auto mt-6 max-w-3xl text-center leading-7;
+  font-size: var(--font-body-sm);
   color: var(--text-muted);
 }
 
-.pill-btn {
-  @apply inline-flex items-center justify-center rounded-full border px-6 py-2.5 text-sm font-medium transition;
-  border-color: var(--accent);
-  color: var(--accent-muted);
+.overhead {
+  font-family: var(--font-mono);
+  font-size: var(--font-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--c-accent);
 }
 
-.pill-btn:hover {
-  background: var(--accent);
-  color: white;
-}
-
-.pill-btn-primary {
-  @apply inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-medium transition;
-  background: var(--accent);
-  color: white;
-}
-
-.pill-btn-primary:hover {
-  background: var(--accent-hover);
+.box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-box);
 }
 
 .surface-card {
   background: var(--surface);
   border: 1px solid var(--border);
+  border-radius: var(--radius-box);
+}
+
+.surface-card:hover {
+  border-color: var(--c-border-ui);
+  box-shadow: var(--c-shadow-sm);
+}
+
+.pill-btn {
+  @apply inline-flex items-center justify-center border px-5 py-2 font-medium transition;
+  font-family: var(--font-mono);
+  font-size: var(--font-btn);
+  border-radius: var(--radius-box);
+  border-color: var(--c-border-ui);
+  color: var(--text);
+  background: var(--surface);
+}
+
+.pill-btn:hover {
+  border-color: var(--c-accent);
+  color: var(--c-accent);
+  box-shadow: var(--c-glow);
+}
+
+.pill-btn-primary,
+.header-action__cta {
+  @apply inline-flex items-center justify-center px-5 py-2 font-medium transition;
+  font-family: var(--font-mono);
+  font-size: var(--font-btn);
+  border-radius: var(--radius-box);
+  background: var(--c-accent);
+  color: #0d0e12;
+  border: 1px solid var(--c-accent);
+}
+
+.pill-btn-primary:hover,
+.header-action__cta:hover {
+  background: var(--c-accent-light);
+  border-color: var(--c-accent-light);
 }
 
 .accent-bar {
   background: var(--accent);
+}
+
+.availability-badge {
+  @apply inline-flex items-center gap-2 border px-3 py-1;
+  font-family: var(--font-mono);
+  font-size: var(--font-sm);
+  border-radius: var(--radius-box);
+  border-color: var(--border);
+  color: var(--text-muted);
+  background: var(--surface);
+}
+
+.status-led {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background: var(--c-dot-green);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .status-led--pulse {
+    animation: status-pulse 1.8s ease-in-out infinite;
+  }
+
+  .reveal {
+    animation: boxEntrance 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+}
+
+@keyframes status-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+@keyframes boxEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .section-deferred {
@@ -71,4 +252,13 @@ body {
 .content-visibility-auto {
   content-visibility: auto;
   contain-intrinsic-size: auto 200px;
+}
+
+.pill-mono {
+  @apply inline-flex items-center border px-2 py-0.5;
+  font-family: var(--font-mono);
+  font-size: var(--font-xs);
+  border-radius: var(--radius-box);
+  border-color: var(--border);
+  color: var(--text-muted);
 }

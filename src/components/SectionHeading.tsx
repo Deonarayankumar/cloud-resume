@@ -1,10 +1,16 @@
-export function SectionHeading({ label, title }: { label: string; title: string }) {
+type SectionHeadingProps = {
+  index?: string;
+  label: string;
+  title: string;
+};
+
+export function SectionHeading({ index, label, title }: SectionHeadingProps) {
+  const overhead = index ? `${index} / ${label}` : label;
+
   return (
-    <div className="mb-10">
-      <p className="text-sm font-medium uppercase tracking-[0.25em] text-[var(--accent-muted)]">
-        {label}
-      </p>
-      <h2 className="mt-2 text-3xl font-bold text-[var(--text)] md:text-4xl">{title}</h2>
+    <div className="mb-10 text-center">
+      <p className="overhead">{overhead}</p>
+      <h2 className="section-title mt-3">{title}</h2>
     </div>
   );
 }
