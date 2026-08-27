@@ -1,40 +1,37 @@
+import { SiJfrog } from 'react-icons/si';
 import { skills } from '../content/skills';
 import { stats } from '../content/profile';
 import { SectionHeading } from './SectionHeading';
 
 export default function Skills() {
   return (
-    <section id="skills" className="section-deferred px-6 py-24">
+    <section id="skills" className="section-deferred px-6 py-12">
       <div className="mx-auto max-w-6xl">
-        <SectionHeading index="02" label="Skills" title="Professional Skills" />
+        <SectionHeading label="Skills" title="Tools I work with" />
 
         <div className="flex flex-wrap justify-center gap-3">
-          {skills.map(({ name, Icon, color }) => (
+          {skills.map(({ name, iconClass }) => (
             <div
               key={name}
-              title={name}
-              className="box flex h-20 w-20 flex-col items-center justify-center p-2 transition hover:border-[var(--c-accent)] sm:h-24 sm:w-24"
+              className="box flex min-h-[5.25rem] w-[6.25rem] flex-col items-center justify-center gap-2 p-2"
             >
-              <Icon className="text-3xl sm:text-4xl" style={{ color }} aria-hidden />
-              <span className="sr-only">{name}</span>
+              {iconClass === 'skill-icon-jfrog' ? (
+                <SiJfrog className="h-8 w-8" style={{ color: '#40BE46' }} aria-hidden />
+              ) : (
+                <i className={`${iconClass} skill-icon`} aria-hidden />
+              )}
+              <span className="text-center text-[length:var(--font-xs)] leading-tight text-[var(--text-muted)]">
+                {name}
+              </span>
             </div>
           ))}
         </div>
 
-        <div className="mt-20 flex flex-col items-center justify-center gap-10 sm:flex-row sm:gap-0">
-          {stats.map((stat, index) => (
-            <div
-              key={stat.label}
-              className={`box stat-card flex flex-col items-center px-10 py-6 text-center sm:min-w-[12rem] ${
-                index > 0 ? 'sm:ml-4' : ''
-              }`}
-            >
-              <p className="font-mono-ui font-semibold text-[var(--c-accent)]" style={{ fontSize: 'var(--font-stat)' }}>
-                {stat.value}
-              </p>
-              <p className="font-mono-ui mt-2 text-xs tracking-[0.15em] text-[var(--text-muted)] uppercase">
-                {stat.label}
-              </p>
+        <div className="mx-auto mt-8 grid max-w-lg gap-4 sm:grid-cols-2">
+          {stats.map((stat) => (
+            <div key={stat.label} className="box px-8 py-6 text-center">
+              <p className="stat-value">{stat.value}</p>
+              <p className="mt-2 text-sm text-[var(--text-muted)]">{stat.label.toLowerCase()}</p>
             </div>
           ))}
         </div>

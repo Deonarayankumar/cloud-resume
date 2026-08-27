@@ -31,19 +31,19 @@ export default function App() {
         <Suspense fallback={<SectionFallback minHeight="28rem" />}>
           <Skills />
         </Suspense>
-        <Suspense fallback={<SectionFallback minHeight="36rem" />}>
+        <Suspense fallback={<SectionFallback minHeight="22rem" />}>
           <Experience />
         </Suspense>
-        <Suspense fallback={<SectionFallback minHeight="24rem" />}>
+        <Suspense fallback={<SectionFallback minHeight="16rem" />}>
           <Projects />
         </Suspense>
-        <Suspense fallback={<SectionFallback minHeight="22rem" />}>
+        <Suspense fallback={<SectionFallback minHeight="14rem" />}>
           <UpskillHorizon />
         </Suspense>
-        <Suspense fallback={<SectionFallback minHeight="20rem" />}>
+        <Suspense fallback={<SectionFallback minHeight="12rem" />}>
           <Education />
         </Suspense>
-        <Suspense fallback={<SectionFallback minHeight="18rem" />}>
+        <Suspense fallback={<SectionFallback minHeight="12rem" />}>
           <Contact />
         </Suspense>
       </main>

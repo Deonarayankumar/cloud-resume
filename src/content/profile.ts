@@ -118,10 +118,10 @@ export const certifications = [
 ];
 
 export const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'About Me', href: '#about' },
+  { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
   { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Upskill', href: '#upskill' },
+  { label: 'Growth', href: '#upskill' },
+  { label: 'Education', href: '#education' },
 ];

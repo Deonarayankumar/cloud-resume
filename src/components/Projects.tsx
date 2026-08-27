@@ -3,40 +3,35 @@ import { SectionHeading } from './SectionHeading';
 
 export default function Projects() {
   return (
-    <section id="projects" className="section-deferred px-6 py-24">
+    <section id="projects" className="section-deferred px-6 py-12">
       <div className="mx-auto max-w-6xl">
-        <SectionHeading index="04" label="Portfolio" title="Projects" />
+        <SectionHeading label="Projects" title="What I ship" />
 
-        <div className="mt-12 flex gap-4 overflow-x-auto pb-4">
+        <div className="grid gap-5 md:grid-cols-3">
           {projects.map((project) => (
-            <article
-              key={project.repo}
-              className="surface-card flex w-[min(100%,320px)] shrink-0 flex-col overflow-hidden"
-            >
-              <div className="flex h-44 shrink-0 items-end border-b border-[var(--border)] bg-[var(--c-surface-alt)] p-5">
-                <div>
-                  <p className="font-mono-ui text-xs uppercase tracking-wider text-[var(--c-accent)]">{project.repo}</p>
-                  <h3 className="mt-2 text-lg font-semibold text-[var(--c-heading)]">{project.name}</h3>
-                </div>
+            <article key={project.repo} className="surface-card flex flex-col overflow-hidden">
+              <div className="border-b border-[var(--border)] bg-[var(--c-surface-alt)] px-5 py-5">
+                <p className="text-[length:var(--font-xs)] text-[var(--c-accent)]">{project.repo}</p>
+                <h3 className="mt-2 text-[length:var(--font-lg)] font-semibold text-[var(--c-heading)]">
+                  {project.name}
+                </h3>
               </div>
 
               <div className="flex flex-1 flex-col p-5">
                 <p className="text-sm leading-6 text-[var(--text-muted)]">{project.description}</p>
-
                 <div className="mt-4 flex flex-wrap gap-2">
                   {project.stack.map((tech) => (
-                    <span key={tech} className="pill-mono">
+                    <span key={tech} className="chip">
                       {tech}
                     </span>
                   ))}
                 </div>
-
                 <div className="mt-auto pt-5">
                   <a
                     href={project.link}
                     target="_blank"
-                    rel="noreferrer"
-                    className="pill-btn-primary flex w-full justify-center text-xs"
+                    rel="noopener noreferrer"
+                    className="pill-btn-primary w-full"
                   >
                     View GitHub
                   </a>

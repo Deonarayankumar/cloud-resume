@@ -3,10 +3,10 @@ import { SectionHeading } from './SectionHeading';
 
 export default function About() {
   return (
-    <section id="about" className="px-6 py-24">
-      <div className="mx-auto max-w-4xl">
-        <SectionHeading index="01" label="About" title="Career objective" />
-        <p className="mx-auto max-w-3xl text-center leading-7 text-[var(--text-muted)]" style={{ fontSize: 'var(--font-body-sm)' }}>
+    <section id="about" className="px-6 py-12">
+      <div className="mx-auto max-w-6xl">
+        <SectionHeading label="About" title="Career objective" />
+        <p className="section-subtitle">
           {summary}
         </p>
       </div>
