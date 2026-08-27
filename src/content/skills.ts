@@ -1,41 +1,22 @@
-import type { IconType } from 'react-icons';
-import { FaAws } from 'react-icons/fa';
-import {
-  SiDocker,
-  SiGithub,
-  SiGrafana,
-  SiGnubash,
-  SiJenkins,
-  SiJfrog,
-  SiKubernetes,
-  SiLinux,
-  SiPrometheus,
-  SiPython,
-  SiSonarqubecloud,
-  SiTerraform,
-} from 'react-icons/si';
-import { VscAzure, VscAzureDevops } from 'react-icons/vsc';
-
 export type SkillItem = {
   name: string;
-  Icon: IconType;
-  color: string;
+  iconClass: string;
 };
 
 export const skills: SkillItem[] = [
-  { name: 'Jenkins', Icon: SiJenkins, color: '#D24939' },
-  { name: 'Azure DevOps', Icon: VscAzureDevops, color: '#0078D4' },
-  { name: 'Terraform', Icon: SiTerraform, color: '#7B42BC' },
-  { name: 'Docker', Icon: SiDocker, color: '#2496ED' },
-  { name: 'Kubernetes', Icon: SiKubernetes, color: '#326CE5' },
-  { name: 'Python', Icon: SiPython, color: '#3776AB' },
-  { name: 'AWS', Icon: FaAws, color: '#FF9900' },
-  { name: 'Azure', Icon: VscAzure, color: '#0078D4' },
-  { name: 'SonarQube', Icon: SiSonarqubecloud, color: '#4E9BCD' },
-  { name: 'JFrog', Icon: SiJfrog, color: '#40BE46' },
-  { name: 'Prometheus', Icon: SiPrometheus, color: '#E6522C' },
-  { name: 'Grafana', Icon: SiGrafana, color: '#F46800' },
-  { name: 'GitHub', Icon: SiGithub, color: '#FFFFFF' },
-  { name: 'Linux', Icon: SiLinux, color: '#FCC624' },
-  { name: 'Bash', Icon: SiGnubash, color: '#4EAA25' },
+  { name: 'Jenkins', iconClass: 'devicon-jenkins-plain colored' },
+  { name: 'Azure DevOps', iconClass: 'devicon-azuredevops-plain colored' },
+  { name: 'Terraform', iconClass: 'devicon-terraform-plain colored' },
+  { name: 'Docker', iconClass: 'devicon-docker-plain colored' },
+  { name: 'Kubernetes', iconClass: 'devicon-kubernetes-plain colored' },
+  { name: 'Python', iconClass: 'devicon-python-plain colored' },
+  { name: 'AWS', iconClass: 'devicon-amazonwebservices-plain-wordmark colored' },
+  { name: 'Azure', iconClass: 'devicon-azure-plain colored' },
+  { name: 'SonarQube', iconClass: 'devicon-sonarqube-original colored' },
+  { name: 'JFrog', iconClass: 'skill-icon-jfrog' },
+  { name: 'Prometheus', iconClass: 'devicon-prometheus-original colored' },
+  { name: 'Grafana', iconClass: 'devicon-grafana-plain colored' },
+  { name: 'GitHub', iconClass: 'devicon-github-original skill-icon--github' },
+  { name: 'Linux', iconClass: 'devicon-linux-plain colored' },
+  { name: 'Bash', iconClass: 'devicon-bash-plain colored' },
 ];

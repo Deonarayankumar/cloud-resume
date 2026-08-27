@@ -21,6 +21,7 @@ const sectionPreloaders: Record<string, () => Promise<unknown>> = {
   '#experience': importExperience,
   '#projects': importProjects,
   '#upskill': importUpskillHorizon,
+  '#education': importEducation,
   '#contact': importContact,
 };
 
