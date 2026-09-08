@@ -1,15 +1,16 @@
 import { SiJfrog } from 'react-icons/si';
 import { skills } from '../content/skills';
 import { stats } from '../content/profile';
+import { Reveal } from './Reveal';
 import { SectionHeading } from './SectionHeading';
 
 export default function Skills() {
   return (
     <section id="skills" className="section-deferred px-6 py-12">
-      <div className="mx-auto max-w-6xl">
+      <Reveal className="mx-auto max-w-6xl">
         <SectionHeading label="Skills" title="Tools I work with" />
 
-        <div className="flex flex-wrap justify-center gap-3">
+        <div className="reveal-stagger flex flex-wrap justify-center gap-3">
           {skills.map(({ name, iconClass }) => (
             <div
               key={name}
@@ -27,7 +28,7 @@ export default function Skills() {
           ))}
         </div>
 
-        <div className="mx-auto mt-8 grid max-w-lg gap-4 sm:grid-cols-2">
+        <div className="reveal-stagger mx-auto mt-8 grid max-w-lg gap-4 sm:grid-cols-2">
           {stats.map((stat) => (
             <div key={stat.label} className="box px-8 py-6 text-center">
               <p className="stat-value">{stat.value}</p>
@@ -35,7 +36,7 @@ export default function Skills() {
             </div>
           ))}
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

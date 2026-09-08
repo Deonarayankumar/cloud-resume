@@ -9,7 +9,7 @@ export default function Footer() {
         <p>
           © {currentYear} {profile.name}
         </p>
-        <a href={`mailto:${profile.email}`} className="text-[var(--text)] no-underline hover:text-[var(--c-accent)]">
+        <a href={`mailto:${profile.email}`} className="text-[var(--text)] no-underline transition-colors duration-200 hover:text-[var(--c-accent)]">
           {profile.email}
         </a>
       </div>

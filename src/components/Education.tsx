@@ -1,13 +1,14 @@
 import { certifications, education } from '../content/profile';
+import { Reveal } from './Reveal';
 import { SectionHeading } from './SectionHeading';
 
 export default function Education() {
   return (
     <section id="education" className="section-deferred px-6 py-12">
-      <div className="mx-auto max-w-6xl">
+      <Reveal className="mx-auto max-w-6xl">
         <SectionHeading label="Education" title="Education and certifications" />
 
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="reveal-stagger grid gap-4 md:grid-cols-3">
           <article className="surface-card p-6 text-center md:col-span-3">
             <p className="text-sm text-[var(--c-accent)]">{education.period}</p>
             <h3 className="mt-2 text-[length:var(--font-lg)] font-semibold text-[var(--c-heading)]">
@@ -24,7 +25,7 @@ export default function Education() {
             </article>
           ))}
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

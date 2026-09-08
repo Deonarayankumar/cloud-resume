@@ -1,4 +1,5 @@
 import { experience } from '../content/profile';
+import { Reveal } from './Reveal';
 import { SectionHeading } from './SectionHeading';
 
 export default function Experience() {
@@ -6,7 +7,7 @@ export default function Experience() {
 
   return (
     <section id="experience" className="section-deferred px-6 py-12">
-      <div className="mx-auto max-w-6xl">
+      <Reveal className="mx-auto max-w-6xl">
         <SectionHeading label="Experience" title="Work experience" />
 
         <div className="surface-card p-6 md:p-8">
@@ -20,7 +21,7 @@ export default function Experience() {
 
           <p className="section-kicker mt-8">Client engagements</p>
 
-          <div className="mt-4 grid gap-4 md:grid-cols-2">
+          <div className="reveal-stagger mt-4 grid gap-4 md:grid-cols-2">
             {job.engagements.map((engagement) => (
               <article
                 key={engagement.client}
@@ -41,7 +42,7 @@ export default function Experience() {
             ))}
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

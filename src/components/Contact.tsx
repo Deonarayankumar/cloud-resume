@@ -1,4 +1,5 @@
 import { profile } from '../content/profile';
+import { Reveal } from './Reveal';
 import { SectionHeading } from './SectionHeading';
 
 const linkedinHandle = profile.linkedin.replace(/\/$/, '').split('/').filter(Boolean).pop();
@@ -6,13 +7,13 @@ const linkedinHandle = profile.linkedin.replace(/\/$/, '').split('/').filter(Boo
 export default function Contact() {
   return (
     <section id="contact" className="section-deferred px-6 py-12">
-      <div className="mx-auto max-w-6xl">
+      <Reveal className="mx-auto max-w-6xl">
         <SectionHeading label="Contact" title="How to reach me" />
         <p className="section-subtitle">
           Email is the fastest way to reach me. Phone and LinkedIn are listed as well.
         </p>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-3">
+        <div className="reveal-stagger mt-10 grid gap-4 sm:grid-cols-3">
           <a href={`mailto:${profile.email}`} className="surface-card p-6 text-center no-underline">
             <p className="section-kicker">Email</p>
             <p className="mt-3 break-all text-sm text-[var(--c-heading)]">{profile.email}</p>
@@ -40,7 +41,7 @@ export default function Contact() {
             Resume
           </a>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

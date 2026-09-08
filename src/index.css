@@ -72,8 +72,17 @@ html {
     scroll-behavior: auto;
   }
 
-  body {
-    transition: none;
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .reveal,
+  .reveal-stagger > * {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 
@@ -84,7 +93,9 @@ body {
   background: var(--bg);
   color: var(--text);
   caret-color: var(--c-accent);
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
 }
 
 ::selection {
@@ -135,11 +146,22 @@ a {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-box);
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease,
+    background-color 0.35s ease;
 }
 
 .surface-card:hover {
   border-color: var(--c-border-ui);
   box-shadow: var(--c-shadow-sm);
+  transform: translateY(-3px);
+}
+
+.box:hover {
+  border-color: var(--c-border-ui);
+  transform: translateY(-2px);
 }
 
 .pill-btn {
@@ -156,12 +178,17 @@ a {
   font-size: var(--font-btn);
   font-weight: 500;
   text-decoration: none;
-  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .pill-btn:hover {
   border-color: var(--c-accent);
   color: var(--c-accent);
+  transform: translateY(-1px);
 }
 
 .pill-btn-primary,
@@ -179,13 +206,17 @@ a {
   font-size: var(--font-btn);
   font-weight: 560;
   text-decoration: none;
-  transition: background-color 0.15s ease, border-color 0.15s ease;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .pill-btn-primary:hover,
 .header-action__cta:hover {
   background: var(--c-accent-light);
   border-color: var(--c-accent-light);
+  transform: translateY(-1px);
 }
 
 .chip {
@@ -251,4 +282,69 @@ a {
 
 .skill-icon--github {
   color: var(--c-heading);
+}
+
+.site-header {
+  animation: header-in 0.45s ease both;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.reveal.reveal--in {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.reveal-stagger > * {
+  opacity: 0;
+}
+
+.reveal.reveal--in .reveal-stagger > *,
+.reveal.reveal--in.reveal-stagger > * {
+  animation: fade-up 0.5s ease both;
+}
+
+.reveal.reveal--in .reveal-stagger > *:nth-child(1) { animation-delay: 0.04s; }
+.reveal.reveal--in .reveal-stagger > *:nth-child(2) { animation-delay: 0.08s; }
+.reveal.reveal--in .reveal-stagger > *:nth-child(3) { animation-delay: 0.12s; }
+.reveal.reveal--in .reveal-stagger > *:nth-child(4) { animation-delay: 0.16s; }
+.reveal.reveal--in .reveal-stagger > *:nth-child(5) { animation-delay: 0.2s; }
+.reveal.reveal--in .reveal-stagger > *:nth-child(6) { animation-delay: 0.24s; }
+.reveal.reveal--in .reveal-stagger > *:nth-child(7) { animation-delay: 0.28s; }
+.reveal.reveal--in .reveal-stagger > *:nth-child(8) { animation-delay: 0.32s; }
+.reveal.reveal--in .reveal-stagger > *:nth-child(9) { animation-delay: 0.36s; }
+.reveal.reveal--in .reveal-stagger > *:nth-child(10) { animation-delay: 0.4s; }
+.reveal.reveal--in .reveal-stagger > *:nth-child(11) { animation-delay: 0.44s; }
+.reveal.reveal--in .reveal-stagger > *:nth-child(12) { animation-delay: 0.48s; }
+.reveal.reveal--in .reveal-stagger > *:nth-child(13) { animation-delay: 0.52s; }
+.reveal.reveal--in .reveal-stagger > *:nth-child(14) { animation-delay: 0.56s; }
+.reveal.reveal--in .reveal-stagger > *:nth-child(15) { animation-delay: 0.6s; }
+.reveal.reveal--in .reveal-stagger > *:nth-child(n + 16) { animation-delay: 0.64s; }
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes header-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
