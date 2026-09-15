@@ -78,14 +78,14 @@ export const experience = [
 
 export const projects = [
   {
-    name: 'Production-Ready Kubernetes Platform',
-    repo: 'devops-e2e-k8s-delivery',
+    name: 'Production-Grade Kubernetes Platform',
+    repo: 'production-grade-kubernetes-platform',
     period: 'Jul 2026 – Aug 2026',
     description:
       'Flagship AKS platform with Terraform (VNet, AKS, PostgreSQL, Blob, DNS), GitOps via Argo CD, Gateway API, OpenTelemetry/Prometheus/Grafana, Kyverno, and Velero disaster recovery — rolling, canary, and blue/green delivery with automated rollback.',
     stack: ['AKS', 'Terraform', 'Argo CD', 'Helm', 'GitHub Actions'],
     gradient: 'from-sky-900/60 to-blue-800/30',
-    link: 'https://github.com/Deonarayankumar/devops-e2e-k8s-delivery',
+    link: 'https://github.com/Deonarayankumar/production-grade-kubernetes-platform',
   },
   {
     name: 'Multi-Service Python CI/CD Pipeline',
