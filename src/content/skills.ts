@@ -9,6 +9,8 @@ export const skills: SkillItem[] = [
   { name: 'Terraform', iconClass: 'devicon-terraform-plain colored' },
   { name: 'Docker', iconClass: 'devicon-docker-plain colored' },
   { name: 'Kubernetes', iconClass: 'devicon-kubernetes-plain colored' },
+  { name: 'Helm', iconClass: 'devicon-helm-plain colored' },
+  { name: 'GitHub Actions', iconClass: 'devicon-githubactions-plain colored' },
   { name: 'Python', iconClass: 'devicon-python-plain colored' },
   { name: 'AWS', iconClass: 'devicon-amazonwebservices-plain-wordmark colored' },
   { name: 'Azure', iconClass: 'devicon-azure-plain colored' },

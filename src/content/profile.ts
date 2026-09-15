@@ -78,8 +78,19 @@ export const experience = [
 
 export const projects = [
   {
+    name: 'Production-Ready Kubernetes Platform',
+    repo: 'devops-e2e-k8s-delivery',
+    period: 'Jul 2026 – Aug 2026',
+    description:
+      'Flagship AKS platform with Terraform (VNet, AKS, PostgreSQL, Blob, DNS), GitOps via Argo CD, Gateway API, OpenTelemetry/Prometheus/Grafana, Kyverno, and Velero disaster recovery — rolling, canary, and blue/green delivery with automated rollback.',
+    stack: ['AKS', 'Terraform', 'Argo CD', 'Helm', 'GitHub Actions'],
+    gradient: 'from-sky-900/60 to-blue-800/30',
+    link: 'https://github.com/Deonarayankumar/devops-e2e-k8s-delivery',
+  },
+  {
     name: 'Multi-Service Python CI/CD Pipeline',
     repo: 'devops-e2e-python-pipeline',
+    period: 'Jun 2026 – Aug 2026',
     description:
       'End-to-end delivery platform with FastAPI API and background worker services, Jenkins shared library, SonarQube quality gates, and JFrog artifact promotion.',
     stack: ['Python', 'Jenkins', 'JFrog', 'SonarQube', 'Docker'],
@@ -89,20 +100,12 @@ export const projects = [
   {
     name: 'Modular Terraform Azure Platform',
     repo: 'devops-e2e-terraform-azure',
+    period: 'Jun 2026 – Aug 2026',
     description:
       'Reusable Terraform modules for network, app, and monitoring with dev/staging/prod environments, Checkov gates, and Azure DevOps approvals.',
     stack: ['Terraform', 'Azure', 'Checkov', 'Key Vault'],
     gradient: 'from-indigo-900/60 to-blue-900/30',
     link: 'https://github.com/Deonarayankumar/devops-e2e-terraform-azure',
-  },
-  {
-    name: 'Helm-Based AKS Delivery',
-    repo: 'devops-e2e-k8s-delivery',
-    description:
-      'Containerised API deployed to AKS via Helm with environment overlays, HPA, health probes, and automated rollback workflows.',
-    stack: ['AKS', 'Helm', 'Docker', 'Azure DevOps'],
-    gradient: 'from-sky-900/60 to-blue-800/30',
-    link: 'https://github.com/Deonarayankumar/devops-e2e-k8s-delivery',
   },
 ];
 
