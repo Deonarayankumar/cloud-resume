@@ -16,6 +16,9 @@ export default function Projects() {
                 <h3 className="mt-2 text-[length:var(--font-lg)] font-semibold text-[var(--c-heading)]">
                   {project.name}
                 </h3>
+                {'period' in project && project.period ? (
+                  <p className="mt-1 text-[length:var(--font-xs)] text-[var(--text-muted)]">{project.period}</p>
+                ) : null}
               </div>
 
               <div className="flex flex-1 flex-col p-5">
